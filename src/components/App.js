@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import TopBar from './TopBar';
 import CalendarView from './Calendar/CalendarView';
 import SidebarView from './Sidebar/SidebarView';
+import NavDrawer from './NavDrawer';
 
 export const styles = {
   calendar: {
@@ -12,21 +13,43 @@ export const styles = {
   },
 };
 
-function App({ classes }) {
-  return (
-    <React.Fragment>
-      <TopBar />
-      <Grid container>
-        <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
-          <CalendarView />
-        </Grid>
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-        <Grid item md={3} sm={12} xs={12}>
-          <SidebarView />
+    this.state = {
+      navigationOpen: false,
+    };
+
+    this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  toggleNav() {
+    this.setState(oldState => ({
+      navigationOpen: !oldState.navigationOpen,
+    }));
+  }
+
+  render() {
+    const { classes } = this.props;
+    const { navigationOpen } = this.state;
+
+    return (
+      <React.Fragment>
+        <TopBar menuAction={this.toggleNav} />
+        <NavDrawer isOpen={navigationOpen} closeFunc={this.toggleNav} />
+        <Grid container>
+          <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
+            <CalendarView />
+          </Grid>
+
+          <Grid item md={3} sm={12} xs={12}>
+            <SidebarView />
+          </Grid>
         </Grid>
-      </Grid>
-    </React.Fragment>
-  );
+      </React.Fragment>
+    );
+  }
 }
 
 App.propTypes = {

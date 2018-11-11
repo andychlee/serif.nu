@@ -10,4 +10,13 @@ describe('App', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should toggle navigation', () => {
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledApp classes={classes} />);
+
+    wrapper.instance().toggleNav();
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
