@@ -1,5 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App renders the homepage 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MemoryRouter
+    initialEntries={
+      Array [
+        "/",
+      ]
+    }
+  >
+    <App
+      classes={
+        Object {
+          "calendar": "",
+        }
+      }
+    />
+  </MemoryRouter>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <App
+        classes={
+          Object {
+            "calendar": "",
+          }
+        }
+      />,
+      "history": Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "iwzmcg",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "iwzmcg",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "classes": Object {
+          "calendar": "",
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <App
+          classes={
+            Object {
+              "calendar": "",
+            }
+          }
+        />,
+        "history": Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "iwzmcg",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "iwzmcg",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "classes": Object {
+            "calendar": "",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
 exports[`App should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
@@ -31,27 +199,31 @@ ShallowWrapper {
           closeFunc={[Function]}
           isOpen={false}
         />,
-        <WithStyles(Grid)
-          container={true}
-        >
-          <WithStyles(Grid)
-            className=""
-            item={true}
-            md={9}
-            sm={12}
-            xs={12}
-          >
-            <WithStyles(CalendarView) />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            md={3}
-            sm={12}
-            xs={12}
-          >
-            <SidebarView />
-          </WithStyles(Grid)>
-        </WithStyles(Grid)>,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />,
+        <Route
+          component={[Function]}
+          path="/about"
+        />,
+        <Route
+          component={[Function]}
+          path="/faq"
+        />,
+        <Route
+          component={[Function]}
+          path="/report"
+        />,
+        <Route
+          component={[Function]}
+          path="/contact"
+        />,
+        <Route
+          component={[Function]}
+          path="/regal"
+        />,
       ],
     },
     "ref": null,
@@ -84,77 +256,72 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <WithStyles(Grid)
-              className=""
-              item={true}
-              md={9}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(CalendarView) />
-            </WithStyles(Grid)>,
-            <WithStyles(Grid)
-              item={true}
-              md={3}
-              sm={12}
-              xs={12}
-            >
-              <SidebarView />
-            </WithStyles(Grid)>,
-          ],
-          "container": true,
+          "exact": true,
+          "path": "/",
+          "render": [Function],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <WithStyles(CalendarView) />,
-              "className": "",
-              "item": true,
-              "md": 9,
-              "sm": 12,
-              "xs": 12,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <SidebarView />,
-              "item": true,
-              "md": 3,
-              "sm": 12,
-              "xs": 12,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-        ],
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/about",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/faq",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/report",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/contact",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/regal",
+        },
+        "ref": null,
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -174,27 +341,31 @@ ShallowWrapper {
             closeFunc={[Function]}
             isOpen={false}
           />,
-          <WithStyles(Grid)
-            container={true}
-          >
-            <WithStyles(Grid)
-              className=""
-              item={true}
-              md={9}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(CalendarView) />
-            </WithStyles(Grid)>
-            <WithStyles(Grid)
-              item={true}
-              md={3}
-              sm={12}
-              xs={12}
-            >
-              <SidebarView />
-            </WithStyles(Grid)>
-          </WithStyles(Grid)>,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+          />,
+          <Route
+            component={[Function]}
+            path="/about"
+          />,
+          <Route
+            component={[Function]}
+            path="/faq"
+          />,
+          <Route
+            component={[Function]}
+            path="/report"
+          />,
+          <Route
+            component={[Function]}
+            path="/contact"
+          />,
+          <Route
+            component={[Function]}
+            path="/regal"
+          />,
         ],
       },
       "ref": null,
@@ -227,77 +398,72 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <WithStyles(Grid)
-                className=""
-                item={true}
-                md={9}
-                sm={12}
-                xs={12}
-              >
-                <WithStyles(CalendarView) />
-              </WithStyles(Grid)>,
-              <WithStyles(Grid)
-                item={true}
-                md={3}
-                sm={12}
-                xs={12}
-              >
-                <SidebarView />
-              </WithStyles(Grid)>,
-            ],
-            "container": true,
+            "exact": true,
+            "path": "/",
+            "render": [Function],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <WithStyles(CalendarView) />,
-                "className": "",
-                "item": true,
-                "md": 9,
-                "sm": 12,
-                "xs": 12,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <SidebarView />,
-                "item": true,
-                "md": 3,
-                "sm": 12,
-                "xs": 12,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-          ],
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/about",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/faq",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/report",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/contact",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/regal",
+          },
+          "ref": null,
+          "rendered": null,
           "type": [Function],
         },
       ],
@@ -357,27 +523,31 @@ ShallowWrapper {
           closeFunc={[Function]}
           isOpen={true}
         />,
-        <WithStyles(Grid)
-          container={true}
-        >
-          <WithStyles(Grid)
-            className=""
-            item={true}
-            md={9}
-            sm={12}
-            xs={12}
-          >
-            <WithStyles(CalendarView) />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            md={3}
-            sm={12}
-            xs={12}
-          >
-            <SidebarView />
-          </WithStyles(Grid)>
-        </WithStyles(Grid)>,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />,
+        <Route
+          component={[Function]}
+          path="/about"
+        />,
+        <Route
+          component={[Function]}
+          path="/faq"
+        />,
+        <Route
+          component={[Function]}
+          path="/report"
+        />,
+        <Route
+          component={[Function]}
+          path="/contact"
+        />,
+        <Route
+          component={[Function]}
+          path="/regal"
+        />,
       ],
     },
     "ref": null,
@@ -410,77 +580,72 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <WithStyles(Grid)
-              className=""
-              item={true}
-              md={9}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(CalendarView) />
-            </WithStyles(Grid)>,
-            <WithStyles(Grid)
-              item={true}
-              md={3}
-              sm={12}
-              xs={12}
-            >
-              <SidebarView />
-            </WithStyles(Grid)>,
-          ],
-          "container": true,
+          "exact": true,
+          "path": "/",
+          "render": [Function],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <WithStyles(CalendarView) />,
-              "className": "",
-              "item": true,
-              "md": 9,
-              "sm": 12,
-              "xs": 12,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <SidebarView />,
-              "item": true,
-              "md": 3,
-              "sm": 12,
-              "xs": 12,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-        ],
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/about",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/faq",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/report",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/contact",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/regal",
+        },
+        "ref": null,
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -500,27 +665,31 @@ ShallowWrapper {
             closeFunc={[Function]}
             isOpen={true}
           />,
-          <WithStyles(Grid)
-            container={true}
-          >
-            <WithStyles(Grid)
-              className=""
-              item={true}
-              md={9}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(CalendarView) />
-            </WithStyles(Grid)>
-            <WithStyles(Grid)
-              item={true}
-              md={3}
-              sm={12}
-              xs={12}
-            >
-              <SidebarView />
-            </WithStyles(Grid)>
-          </WithStyles(Grid)>,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+          />,
+          <Route
+            component={[Function]}
+            path="/about"
+          />,
+          <Route
+            component={[Function]}
+            path="/faq"
+          />,
+          <Route
+            component={[Function]}
+            path="/report"
+          />,
+          <Route
+            component={[Function]}
+            path="/contact"
+          />,
+          <Route
+            component={[Function]}
+            path="/regal"
+          />,
         ],
       },
       "ref": null,
@@ -553,77 +722,72 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <WithStyles(Grid)
-                className=""
-                item={true}
-                md={9}
-                sm={12}
-                xs={12}
-              >
-                <WithStyles(CalendarView) />
-              </WithStyles(Grid)>,
-              <WithStyles(Grid)
-                item={true}
-                md={3}
-                sm={12}
-                xs={12}
-              >
-                <SidebarView />
-              </WithStyles(Grid)>,
-            ],
-            "container": true,
+            "exact": true,
+            "path": "/",
+            "render": [Function],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <WithStyles(CalendarView) />,
-                "className": "",
-                "item": true,
-                "md": 9,
-                "sm": 12,
-                "xs": 12,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <SidebarView />,
-                "item": true,
-                "md": 3,
-                "sm": 12,
-                "xs": 12,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-          ],
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/about",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/faq",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/report",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/contact",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/regal",
+          },
+          "ref": null,
+          "rendered": null,
           "type": [Function],
         },
       ],

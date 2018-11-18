@@ -4,29 +4,34 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { BrowserRouter as Link } from 'react-router-dom';
+
+function ListItemLink(props) {
+  return <ListItem button component={Link} {...props} />;
+}
 
 function NavDrawer({ isOpen, closeFunc }) {
   return (
     <Drawer onClose={closeFunc} open={isOpen}>
       <List>
-        <ListItem button>
+        <ListItemLink to="/" onClick={closeFunc}>
           <ListItemText primary="Serif.nu" />
-        </ListItem>
-        <ListItem button>
+        </ListItemLink>
+        <ListItemLink to="/about" onClick={closeFunc}>
           <ListItemText primary="About" />
-        </ListItem>
-        <ListItem button>
+        </ListItemLink>
+        <ListItemLink to="/faq" onClick={closeFunc}>
           <ListItemText primary="FAQ" />
-        </ListItem>
-        <ListItem button>
+        </ListItemLink>
+        <ListItemLink to="/report" onClick={closeFunc}>
           <ListItemText primary="Report a Bug" />
-        </ListItem>
-        <ListItem button>
+        </ListItemLink>
+        <ListItemLink to="/contact" onClick={closeFunc}>
           <ListItemText primary="Contact" />
-        </ListItem>
-        <ListItem button>
+        </ListItemLink>
+        <ListItemLink to="/regal" onClick={closeFunc}>
           <ListItemText primary="Regal" />
-        </ListItem>
+        </ListItemLink>
       </List>
     </Drawer>
   );

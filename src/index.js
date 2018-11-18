@@ -8,6 +8,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import App from 'components/App';
 import rootReducer from 'reducers';
 import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const styles = {
   '@global body': {
@@ -44,7 +45,9 @@ function Index() {
   return (
     <Provider store={store}>
       <MuiThemeProvider theme={theme}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </MuiThemeProvider>
     </Provider>
   );

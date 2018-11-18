@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+import { Route } from 'react-router-dom';
 import TopBar from './TopBar';
-import CalendarView from './Calendar/CalendarView';
-import SidebarView from './Sidebar/SidebarView';
 import NavDrawer from './NavDrawer';
+import HomePage from './HomePage';
+import AboutPage from './AboutPage';
+import FAQPage from './FAQPage';
+import RegalPage from './RegalPage';
+import ReportPage from './ReportPage';
+import ContactPage from './ContactPage';
 
 export const styles = {
   calendar: {
@@ -38,15 +42,18 @@ class App extends Component {
       <React.Fragment>
         <TopBar menuAction={this.toggleNav} />
         <NavDrawer isOpen={navigationOpen} closeFunc={this.toggleNav} />
-        <Grid container>
-          <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
-            <CalendarView />
-          </Grid>
-
-          <Grid item md={3} sm={12} xs={12}>
-            <SidebarView />
-          </Grid>
-        </Grid>
+        <Route
+          exact
+          path="/"
+          render={props => (
+            <HomePage {...props} classes={classes} />
+          )}
+        />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/faq" component={FAQPage} />
+        <Route path="/report" component={ReportPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/regal" component={RegalPage} />
       </React.Fragment>
     );
   }
