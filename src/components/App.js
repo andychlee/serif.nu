@@ -42,6 +42,7 @@ class App extends Component {
       <React.Fragment>
         <TopBar menuAction={this.toggleNav} />
         <NavDrawer isOpen={navigationOpen} closeFunc={this.toggleNav} />
+
         <Route
           exact
           path="/"
