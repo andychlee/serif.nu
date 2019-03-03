@@ -12,7 +12,7 @@ export function fetchSearchIndexSuccess(searchIndex) {
     type: actionTypes.FETCH_SEARCH_INDEX_SUCCESS,
     searchIndex,
   };
-}
+} 
 
 export function fetchSearchIndexFailure() {
   return {
@@ -20,18 +20,20 @@ export function fetchSearchIndexFailure() {
   };
 }
 
-export const getSearchResultsRequest = searchInput => ({
-  type: actionTypes.GET_SEARCH_RESULTS_REQUEST,
-  searchInput,
-});
+export function fetchSubjectsRequest(){
+  return {
+    type: actionTypes.FETCH_SUBJECTS_REQUEST,
+  };
+}
 
-export const getSearchResultsSuccess = searchResults => ({
-  type: actionTypes.GET_SEARCH_RESULTS_SUCCESS,
-  searchResults,
-});
+export function fetchSubjectsSuccess(){
+  return {
+    type: actionTypes.FETCH_SUBJECTS_SUCCESS,
+  };
+}
 
-export const getSearchResultsFailure = () => ({
-  type: actionTypes.GET_SEARCH_RESULTS_FAILURE,
+export const getchSubjectsFailure = () => ({
+  type: actionTypes.FETCH_SUBJECTS_FAILURE
 });
 
 export const clearSearchResults = () => ({
@@ -84,7 +86,25 @@ export const getSchoolsFailure = () => ({
   type: actionTypes.GET_SCHOOLS_FAILURE,
 });
 
+//////
+export function FETCH_SUBJECTS_FAILURE(){
+  return {
+    type: actionTypes.FETCH_SUBJECTS_FAILURE,
+  };
+}
+export const fetchSubjectsSuccess = searchInput => ({
+  type: actionTypes.GET_SEARCH_RESULTS_REQUEST,
+  searchInput,
+});
+
+export const getSearchResultsSuccess = searchResults => ({
+  type: actionTypes.GET_SEARCH_RESULTS_SUCCESS,
+  searchResults,
+});
+////////
+
 export const updateSearchInput = searchInput => ({
   type: actionTypes.UPDATE_SEARCH_INPUT,
   searchInput,
 });
+
