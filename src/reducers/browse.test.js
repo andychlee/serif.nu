@@ -30,6 +30,7 @@ describe('browse reducer', () => {
     const state = fromJS({
       isFetching: true,
       schools: [],
+
     });
     const testResults = [
       { _id: '5bab37ef1080c00004622388', id: 'MUSIC', name: 'Bienen School of Music', term: '4720', type: 'school' },
@@ -51,4 +52,51 @@ describe('browse reducer', () => {
 
     expect(browseReducer(state, action)).toEqual(state);
   });
+  
+  
+  
+  
+  
+  it(`should handle ${actionTypes.FETCH_SUBJECTS_REQUEST}`, () => {
+    const state = fromJS({ isFetching: false });
+    const action = actionCreators.fetchSubjectsRequest();
+
+    expect(browseReducer(state, action)).toEqual(
+      loop(
+        fromJS({ isFetching: true }),
+        Cmd.run(fetchSubjects, {
+          successActionCreator: fetchSubjectsSuccess,
+          failActionCreator: fetchSubjectsFailure,
+        }),
+      ),
+    );
+  });
+
+  
+  it(`should handle ${actionTypes.FETCH_SUBJECTS_SUCCESS}`, () => {
+    const state = fromJS({
+      isFetching: true,
+      subjects: [],
+    });
+    
+    const testResults = [
+      
+    ];
+    
+    const action = actionCreators.getSchoolsFailure();
+
+    expect(browseReducer(state, action)).toEqual(state);
+  });
+  
+  it(`should handle ${actionTypes.FETCH_SUBJECTS_FAILURE}`, () => {
+    const state = fromJS({
+      isFetching: false,
+      subjects: [],
+    });
+    const action = actionCreators.getSchoolsFailure();
+
+    expect(browseReducer(state, action)).toEqual(state);
+  });
+
+
 });

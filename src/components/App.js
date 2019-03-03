@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   getSchoolsRequest,
   fetchSearchIndex as fetchSearchIndexAction,
+  fetchSubjectsRequest
 } from 'actions';
 import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
@@ -22,16 +23,19 @@ export const styles = {
 
 class App extends Component {
   componentDidMount() {
-    const { fetchSchools, fetchSearchIndex } = this.props;
+    const { fetchSchools, fetchSearchIndex, fetchSubjects } = this.props;
 
     auth.signInAnonymously(); // TODO handle sign in error using .catch()
 
     auth.onAuthStateChanged((user) => {
       if (user) {
-        fetchSchools(CURRENT_TERM);
-        fetchSearchIndex(CURRENT_TERM);
+        fetchSchools(CURRENT_TERM).then(result => console.log(result));
+        fetchSearchIndex(CURRENT_TERM).then(result => console.log(result));
+        fetchSubjects('WCAS').then(result => console.log(result)).catch(result => console.log('failure'));
       }
     });
+    
+    
   }
 
   render() {
@@ -56,11 +60,13 @@ App.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   fetchSchools: PropTypes.func.isRequired,
   fetchSearchIndex: PropTypes.func.isRequired,
+  fetchSubjects: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
   fetchSchools: getSchoolsRequest,
   fetchSearchIndex: fetchSearchIndexAction,
+  fetchSubjects: fetchSubjectsRequest,
 };
 
 export { App as UnstyledApp };

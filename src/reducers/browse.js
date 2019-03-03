@@ -1,12 +1,13 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
-import { getSchoolsSuccess, getSchoolsFailure } from 'actions';
-import { fetchSchools } from 'effects/browse';
+import { getSchoolsSuccess, getSchoolsFailure, fetchSubjectsRequest, fetchSubjectsSuccess, fetchSubjectsFailure } from 'actions';
 import * as actionTypes from '../actions/action-types';
-
+import { fetchSubjects, fetchSchools } from '../effects/browse';
+import CURRENT_TERM from '../util/constants.js'
 export const initialBrowseState = fromJS({
   isFetching: false,
   schools: [],
+  subjects: [],
 });
 
 function browse(state = initialBrowseState, action) {
@@ -25,6 +26,23 @@ function browse(state = initialBrowseState, action) {
     case actionTypes.GET_SCHOOLS_FAILURE:
       return state.set('isFetching', false)
         .set('schools', initialBrowseState.get('schools'));
+      // eslint-disable-next-line no-trailing-spaces
+
+    case actionTypes.FETCH_SUBJECTS_REQUEST:
+      return loop(
+        state.set('isFetching', true),
+        Cmd.run(fetchSubjects, {
+          args: [action.schoolId],
+          successActionCreator: fetchSubjectsSuccess,
+          failActionCreator: fetchSubjectsFailure,
+        }),
+      );
+    case actionTypes.FETCH_SUBJECTS_SUCCESS:
+      return state.set('isFetching', false)
+        .set('subjects', fromJS(action.subjects));
+    case actionTypes.FETCH_SUBJECTS_FAILURE:
+      return state.set('isFetching', false)
+        .set('subjects', initialBrowseState.get('subjects'));
     default:
       return state;
   }
