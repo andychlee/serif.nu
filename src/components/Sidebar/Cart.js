@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import { UnstyledSection } from '../Calendar/Section';
 
 export const styles = {
   cartHeading: {
@@ -9,14 +10,52 @@ export const styles = {
   },
 };
 
+export const sectionStyles = section => (
+  {
+    paper: {
+      position: 'static',
+      backgroundColor: section.color,
+      overflow: 'hidden',
+    },
+    container: {
+      margin: '3px',
+    },
+    text: {
+      color: 'white',
+    },
+    header: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
+    },
+  }
+);
+
 function Cart({ classes, sections }) {
-  const label = sections.length === 1 ? 'Class' : 'Classes';
+  const uniqueSections = [];
+  const usedIDs = [];
+
+  for (const section of sections) {
+    if (!usedIDs.includes(section.id)) {
+      usedIDs.push(section.id);
+      uniqueSections.push(section);
+    }
+  }
+
+  const label = uniqueSections.length === 1 ? 'Class' : 'Classes';
+
   return (
-    <Typography variant="h5" className={classes.cartHeading}>
-      {sections.length}
-      {' '}
-      {label}
-    </Typography>
+    <div>
+      <Typography variant="h5" className={classes.cartHeading}>
+        {uniqueSections.length}
+        {' '}
+        {label}
+      </Typography>
+      {uniqueSections.map((section) => {
+        const Section = withStyles(sectionStyles(section))(UnstyledSection);
+        return (<Section key={section.id} section={section} />);
+      })}
+    </div>
   );
 }
 
