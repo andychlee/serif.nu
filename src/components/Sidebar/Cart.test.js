@@ -16,4 +16,11 @@ describe('Cart', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+  it('renders correctly with multiple sections with the same id', () => {
+    const classes = mockStyles(styles);
+    const sections = [{ id: 1324 }, { id: 1324 }];
+    const wrapper = shallow(<UnstyledCart sections={sections} classes={classes} />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

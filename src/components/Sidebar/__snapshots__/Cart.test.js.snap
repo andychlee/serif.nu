@@ -22,45 +22,269 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
       "children": Array [
-        0,
-        " ",
-        "Classes",
+        <WithStyles(Typography)
+          className=""
+          variant="h5"
+        >
+          0
+           
+          Classes
+        </WithStyles(Typography)>,
+        Array [],
       ],
-      "className": "",
-      "variant": "h5",
     },
     "ref": null,
     "rendered": Array [
-      0,
-      " ",
-      "Classes",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            0,
+            " ",
+            "Classes",
+          ],
+          "className": "",
+          "variant": "h5",
+        },
+        "ref": null,
+        "rendered": Array [
+          0,
+          " ",
+          "Classes",
+        ],
+        "type": [Function],
+      },
     ],
-    "type": [Function],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
         "children": Array [
-          0,
-          " ",
-          "Classes",
+          <WithStyles(Typography)
+            className=""
+            variant="h5"
+          >
+            0
+             
+            Classes
+          </WithStyles(Typography)>,
+          Array [],
         ],
-        "className": "",
-        "variant": "h5",
       },
       "ref": null,
       "rendered": Array [
-        0,
-        " ",
-        "Classes",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              0,
+              " ",
+              "Classes",
+            ],
+            "className": "",
+            "variant": "h5",
+          },
+          "ref": null,
+          "rendered": Array [
+            0,
+            " ",
+            "Classes",
+          ],
+          "type": [Function],
+        },
       ],
-      "type": [Function],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Cart renders correctly with multiple sections with the same id 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Cart
+    classes={
+      Object {
+        "cartHeading": "",
+      }
+    }
+    sections={
+      Array [
+        Object {
+          "id": 1324,
+        },
+        Object {
+          "id": 1324,
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <WithStyles(Typography)
+          className=""
+          variant="h5"
+        >
+          1
+           
+          Class
+        </WithStyles(Typography)>,
+        Array [
+          <WithStyles(Section)
+            section={
+              Object {
+                "id": 1324,
+              }
+            }
+          />,
+        ],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            1,
+            " ",
+            "Class",
+          ],
+          "className": "",
+          "variant": "h5",
+        },
+        "ref": null,
+        "rendered": Array [
+          1,
+          " ",
+          "Class",
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "cart_1324",
+        "nodeType": "class",
+        "props": Object {
+          "section": Object {
+            "id": 1324,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <WithStyles(Typography)
+            className=""
+            variant="h5"
+          >
+            1
+             
+            Class
+          </WithStyles(Typography)>,
+          Array [
+            <WithStyles(Section)
+              section={
+                Object {
+                  "id": 1324,
+                }
+              }
+            />,
+          ],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              1,
+              " ",
+              "Class",
+            ],
+            "className": "",
+            "variant": "h5",
+          },
+          "ref": null,
+          "rendered": Array [
+            1,
+            " ",
+            "Class",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "cart_1324",
+          "nodeType": "class",
+          "props": Object {
+            "section": Object {
+              "id": 1324,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -111,45 +335,119 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
       "children": Array [
-        1,
-        " ",
-        "Class",
+        <WithStyles(Typography)
+          className=""
+          variant="h5"
+        >
+          1
+           
+          Class
+        </WithStyles(Typography)>,
+        Array [
+          <WithStyles(Section)
+            section={Object {}}
+          />,
+        ],
       ],
-      "className": "",
-      "variant": "h5",
     },
     "ref": null,
     "rendered": Array [
-      1,
-      " ",
-      "Class",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            1,
+            " ",
+            "Class",
+          ],
+          "className": "",
+          "variant": "h5",
+        },
+        "ref": null,
+        "rendered": Array [
+          1,
+          " ",
+          "Class",
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "cart_undefined",
+        "nodeType": "class",
+        "props": Object {
+          "section": Object {},
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
-    "type": [Function],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
         "children": Array [
-          1,
-          " ",
-          "Class",
+          <WithStyles(Typography)
+            className=""
+            variant="h5"
+          >
+            1
+             
+            Class
+          </WithStyles(Typography)>,
+          Array [
+            <WithStyles(Section)
+              section={Object {}}
+            />,
+          ],
         ],
-        "className": "",
-        "variant": "h5",
       },
       "ref": null,
       "rendered": Array [
-        1,
-        " ",
-        "Class",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              1,
+              " ",
+              "Class",
+            ],
+            "className": "",
+            "variant": "h5",
+          },
+          "ref": null,
+          "rendered": Array [
+            1,
+            " ",
+            "Class",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "cart_undefined",
+          "nodeType": "class",
+          "props": Object {
+            "section": Object {},
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
-      "type": [Function],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

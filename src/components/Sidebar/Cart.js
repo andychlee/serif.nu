@@ -35,12 +35,14 @@ function Cart({ classes, sections }) {
   const uniqueSections = [];
   const usedIDs = [];
 
-  for (const section of sections) {
-    if (!usedIDs.includes(section.id)) {
-      usedIDs.push(section.id);
-      uniqueSections.push(section);
-    }
-  }
+  sections.forEach(
+    (section) => {
+      if (!usedIDs.includes(section.id)) {
+        usedIDs.push(section.id);
+        uniqueSections.push(section);
+      }
+    },
+  );
 
   const label = uniqueSections.length === 1 ? 'Class' : 'Classes';
 
@@ -53,7 +55,8 @@ function Cart({ classes, sections }) {
       </Typography>
       {uniqueSections.map((section) => {
         const Section = withStyles(sectionStyles(section))(UnstyledSection);
-        return (<Section key={section.id} section={section} />);
+        const key = `cart_${section.id}`;
+        return (<Section key={key} section={section} />);
       })}
     </div>
   );
