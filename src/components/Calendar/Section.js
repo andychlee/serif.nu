@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { getDurationInHours, getFormattedClassEvent } from 'util/time';
+
 
 export const MAX_WIDTH_PERCENT = 97;
 
@@ -38,27 +39,39 @@ export const styles = {
   },
 };
 
-function Section({ classes, section }) {
-  return (
-    <Paper className={classes.paper}>
-      <div className={classes.container}>
-        <div className={classes.header}>
-          <Typography variant="caption" className={classes.text}>
-            {getFormattedClassEvent(section.event)}
-          </Typography>
+class Section extends Component {
+  toggleModal(){
+    state
+  }
 
-          <Typography variant="caption" className={classes.text}>
-            {`${section.subjectId} ${section.courseId}`}
-          </Typography>
-        </div>
-
-        <Typography variant="subtitle2" className={`${classes.text} ${classes.name}`} noWrap>
-          {section.name}
-        </Typography>
+  render() {
+    const { classes, section } = this.props;
+    return (
+      <div>
+        <Paper className={classes.paper} onClick={this.toggleModal}>
+          <div className={classes.container}>
+            <div className={classes.header}>
+              <Typography variant="caption" className={classes.text}>
+                {getFormattedClassEvent(section.event)}
+              </Typography>
+    
+              <Typography variant="caption" className={classes.text}>
+                {`${section.subjectId} ${section.courseId}`}
+              </Typography>
+            </div>
+    
+            <Typography variant="subtitle2" className={`${classes.text} ${classes.name}`} noWrap>
+              {section.name}
+            </Typography>
+          </div>
+        </Paper>
+        {/* Modal goes here  */}
       </div>
-    </Paper>
-  );
+
+    );
+  }
 }
+
 
 Section.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
