@@ -38,6 +38,14 @@ export const styles = {
     justifyContent: 'space-between',
     flexWrap: 'wrap',
   },
+  modal: {
+    position: 'absolute',
+    width: '80%',
+    outline: 'none',
+    top: '12.5%',
+    left: '12.5%',
+    padding: '10px',
+  },
 };
 
 class Section extends Component {
@@ -84,12 +92,13 @@ class Section extends Component {
           open={showModal}
           onClose={this.toggleModal}
         >
-          {/* {this.props.classes}
-          {this.props.section} */}
-          <Paper onClick={this.toggleModal}>Cancel</Paper>
+          <Paper className={classes.modal}>
+            <Typography variant="h5">
+              {`${section.subjectId} ${section.courseId} -- Section ${section.sectionNumber}`}
+            </Typography>
+          </Paper>
         </Modal>
       </div>
-
     );
   }
 }

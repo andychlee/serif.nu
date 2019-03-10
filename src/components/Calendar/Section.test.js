@@ -52,4 +52,15 @@ describe('Section', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders modal correctly', () => {
+    const classes = mockStyles(styles);
+    const testSection = { id: '12345', course: '101-1', event };
+    const wrapper = shallow(
+      <UnstyledSection section={testSection} classes={classes} />,
+    );
+    wrapper.instance().toggleModal();
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
