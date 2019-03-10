@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
-import Dialog from '@material-ui/Dialog';
+import Modal from '@material-ui/core/Modal';
 import Typography from '@material-ui/core/Typography';
 import { getDurationInHours, getFormattedClassEvent } from 'util/time';
 
@@ -41,10 +41,13 @@ export const styles = {
 };
 
 class Section extends Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     open:false,
   };
-
+}
   toggleModal = () => {
     this.setState({ open: true });
   };
@@ -70,19 +73,19 @@ class Section extends Component {
             </Typography>
           </div>
         </Paper>
-        <Dialog 
-          open={this.toggleModal} 
-          modal={false} 
-          onClose={this.state}> 
-          {this.props.classes}
-          {this.props.section} 
-          <Paper onClick={this.toggleModal}>Cancel</Paper> 
-          </Dialog>
+        <Modal> 
+          // open={this.toggleModal} 
+          // modal={false} 
+          // onClose={this.state}> 
+          // {this.props.classes}
+          // {this.props.section} 
+          // <Paper onClick={this.toggleModal}>Cancel</Paper> 
+          </Modal>
       </div>
 
     );
   }
-}
+
 
 
 Section.propTypes = {
