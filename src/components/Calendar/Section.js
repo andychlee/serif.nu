@@ -43,17 +43,22 @@ export const styles = {
 class Section extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showModal: false,
+    };
+    this.toggleModal = this.toggleModal.bind(this);
   }
-  state = {
-    open:false,
-  };
-}
-  toggleModal = () => {
-    this.setState({ open: true });
-  };
+
+  toggleModal() {
+    const { showModal } = this.state;
+    this.setState({
+      showModal: !showModal,
+    });
+  }
 
   render() {
     const { classes, section } = this.props;
+    const { showModal } = this.state;
     return (
       <div>
         <Paper className={classes.paper} onClick={this.toggleModal}>
@@ -62,31 +67,32 @@ class Section extends Component {
               <Typography variant="caption" className={classes.text}>
                 {getFormattedClassEvent(section.event)}
               </Typography>
-    
+
               <Typography variant="caption" className={classes.text}>
                 {`${section.subjectId} ${section.courseId}`}
               </Typography>
             </div>
-    
+
             <Typography variant="subtitle2" className={`${classes.text} ${classes.name}`} noWrap>
               {section.name}
             </Typography>
           </div>
         </Paper>
-        <Modal> 
-          // open={this.toggleModal} 
-          // modal={false} 
-          // onClose={this.state}> 
-          // {this.props.classes}
-          // {this.props.section} 
-          // <Paper onClick={this.toggleModal}>Cancel</Paper> 
-          </Modal>
+        <Modal
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          open={showModal}
+          onClose={this.toggleModal}
+        >
+          {/* {this.props.classes}
+          {this.props.section} */}
+          <Paper onClick={this.toggleModal}>Cancel</Paper>
+        </Modal>
       </div>
 
     );
   }
-
-
+}
 
 Section.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
