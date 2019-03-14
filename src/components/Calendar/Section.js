@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
-import Modal from '@material-ui/core/Modal';
+import Dialog from '@material-ui/core/Dialog';
 import Typography from '@material-ui/core/Typography';
 import { getDurationInHours, getFormattedClassEvent } from 'util/time';
 
@@ -40,7 +40,7 @@ export const styles = {
   },
   modal: {
     position: 'absolute',
-    width: '80%',
+    width: '450px',
     outline: 'none',
     top: '12.5%',
     left: '12.5%',
@@ -52,24 +52,24 @@ class Section extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
+      showDialog: false,
     };
-    this.toggleModal = this.toggleModal.bind(this);
+    this.toggleDialog = this.toggleDialog.bind(this);
   }
 
-  toggleModal() {
-    const { showModal } = this.state;
+  toggleDialog() {
+    const { showDialog } = this.state;
     this.setState({
-      showModal: !showModal,
+      showDialog: !showDialog,
     });
   }
 
   render() {
     const { classes, section } = this.props;
-    const { showModal } = this.state;
+    const { showDialog } = this.state;
     return (
       <div>
-        <Paper className={classes.paper} onClick={this.toggleModal}>
+        <Paper className={classes.paper} onClick={this.toggleDialog}>
           <div className={classes.container}>
             <div className={classes.header}>
               <Typography variant="caption" className={classes.text}>
@@ -86,18 +86,22 @@ class Section extends Component {
             </Typography>
           </div>
         </Paper>
-        <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          open={showModal}
-          onClose={this.toggleModal}
+        <Dialog
+          open={showDialog}
+          onClose={this.toggleDialog}
+          aria-labelledby="simple-dialog-title"
+          aria-describedby="simple-dialog-description"
         >
-          <Paper className={classes.modal}>
+        <DialogActions>
+        <Button onClick={this.toggleDialog}> Cancel </Button>
+        <Button onClick={this.toggleDialog}> Remove </Button>
+        </DialogActions>
+          <Paper className={classes.dialog}>
             <Typography variant="h5">
-              {`${section.subjectId} ${section.courseId} -- Section ${section.sectionNumber}`}
+              {`${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`}
             </Typography>
           </Paper>
-        </Modal>
+        </Dialog>
       </div>
     );
   }
