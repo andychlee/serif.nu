@@ -14,10 +14,17 @@ export function fetchSchools() {
     );
 }
 
-export function fetchCourses(termId, schoolId, subjectId) {
+export function fetchSubjects(schoolId) {
+  return currentTermDoc
+    .collection('subjects')
+    .where('schoolId', '==', schoolId)
+    .get()
+    .then(querySnapshot => querySnapshot.map(doc => doc.data()));
+}
+
+export function fetchCourses(schoolId, subjectId) {
   return currentTermDoc
     .collection('courses')
-    .where('termId', '==', termId)
     .where('schoolId', '==', schoolId)
     .get()
     .then(
