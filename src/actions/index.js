@@ -12,7 +12,7 @@ export function fetchSearchIndexSuccess(searchIndex) {
     type: actionTypes.FETCH_SEARCH_INDEX_SUCCESS,
     searchIndex,
   };
-} 
+}
 
 export function fetchSearchIndexFailure() {
   return {
