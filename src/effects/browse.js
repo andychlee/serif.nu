@@ -3,6 +3,7 @@ import { CURRENT_TERM } from 'util/constants';
 
 const currentTermDoc = db.collection('terms').doc(CURRENT_TERM);
 
+<<<<<<< HEAD
 export function fetchSchools() {
   return currentTermDoc
     .collection('subjects')
@@ -25,6 +26,14 @@ export function fetchCourses(schoolId, subjectId) {
     .collection('courses')
     .where('schoolId', '==', schoolId)
     .where('subjectId', '==', subjectId)
+=======
+/* eslint-disable import/prefer-default-export */
+export function fetchSubjects(termId, schoolId) {
+  return currentTermDoc
+    .collection('subjects')
+    .where('termId', '==', termId)
+    .where('schoolId', '==', schoolId)
+>>>>>>> 0fca8f5c0793bda629537d075bd9aabb5fd28f5d
     .get()
     .then(
       querySnapshot => querySnapshot.docs.map(doc => doc.data()),
