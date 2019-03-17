@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
-import { getSchoolsSuccess, getSchoolsFailure, getSubjectsSuccess, getchSubjectsFailure } from 'actions';
+import { getSchoolsSuccess, getSchoolsFailure, fetchSubjectsSuccess, fetchSubjectsFailure } from 'actions';
 import * as actionTypes from '../actions/action-types';
 import { fetchSubjects, fetchSchools } from '../effects/browse';
 
@@ -29,8 +29,8 @@ function browse(state = initialBrowseState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSubjects, {
-          successActionCreator: getSubjectsSuccess,
-          failActionCreator: getchSubjectsFailure
+          successActionCreator: fetchSubjectsSuccess,
+          failActionCreator: fetchSubjectsFailure,
         }),
       );
     case actionTypes.FETCH_SUBJECTS_SUCCESS:

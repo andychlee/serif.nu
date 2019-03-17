@@ -20,28 +20,6 @@ export function fetchSearchIndexFailure() {
   };
 }
 
-export const getSearchResultsRequest = searchInput => ({
-  type: actionTypes.GET_SEARCH_RESULTS_REQUEST,
-  searchInput,
-});
-
-export function fetchSubjectsRequest(schoolId) {
-  return {
-    type: actionTypes.FETCH_SUBJECTS_REQUEST,
-    schoolId
-  };
-}
-
-export function fetchSubjectsSuccess(){
-  return {
-    type: actionTypes.FETCH_SUBJECTS_SUCCESS,
-  };
-}
-
-export const getchSubjectsFailure = () => ({
-  type: actionTypes.FETCH_SUBJECTS_FAILURE
-});
-
 export const clearSearchResults = () => ({
   type: actionTypes.CLEAR_SEARCH_RESULTS,
 });
@@ -92,12 +70,7 @@ export const getSchoolsFailure = () => ({
   type: actionTypes.GET_SCHOOLS_FAILURE,
 });
 
-export function FETCH_SUBJECTS_FAILURE(){
-  return {
-    type: actionTypes.FETCH_SUBJECTS_FAILURE,
-  };
-}
-export const fetchSubjectsSuccess = searchInput => ({
+export const getSearchResultsRequest = searchInput => ({
   type: actionTypes.GET_SEARCH_RESULTS_REQUEST,
   searchInput,
 });
@@ -112,3 +85,16 @@ export const updateSearchInput = searchInput => ({
   searchInput,
 });
 
+export const fetchSubjectsRequest = schoolId => ({
+  type: actionTypes.FETCH_SUBJECTS_REQUEST,
+  schoolId,
+});
+
+export const fetchSubjectsSuccess = subjects => ({
+  type: actionTypes.FETCH_SUBJECTS_SUCCESS,
+  subjects,
+});
+
+export const fetchSubjectsFailure = () => ({
+  type: actionTypes.FETCH_SUBJECTS_FAILURE,
+});
