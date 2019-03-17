@@ -25,6 +25,8 @@ function browse(state = initialBrowseState, action) {
     case actionTypes.GET_SCHOOLS_FAILURE:
       return state.set('isFetching', false)
         .set('schools', initialBrowseState.get('schools'));
+      // eslint-disable-next-line no-trailing-spaces
+
     case actionTypes.FETCH_SUBJECTS_REQUEST:
       return loop(
         state.set('isFetching', true),
