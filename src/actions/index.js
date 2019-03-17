@@ -20,9 +20,15 @@ export function fetchSearchIndexFailure() {
   };
 }
 
-export function fetchSubjectsRequest(){
+export const getSearchResultsRequest = searchInput => ({
+  type: actionTypes.GET_SEARCH_RESULTS_REQUEST,
+  searchInput,
+});
+
+export function fetchSubjectsRequest(schoolId) {
   return {
     type: actionTypes.FETCH_SUBJECTS_REQUEST,
+    schoolId
   };
 }
 
@@ -86,7 +92,6 @@ export const getSchoolsFailure = () => ({
   type: actionTypes.GET_SCHOOLS_FAILURE,
 });
 
-//////
 export function FETCH_SUBJECTS_FAILURE(){
   return {
     type: actionTypes.FETCH_SUBJECTS_FAILURE,
@@ -101,7 +106,6 @@ export const getSearchResultsSuccess = searchResults => ({
   type: actionTypes.GET_SEARCH_RESULTS_SUCCESS,
   searchResults,
 });
-////////
 
 export const updateSearchInput = searchInput => ({
   type: actionTypes.UPDATE_SEARCH_INPUT,
