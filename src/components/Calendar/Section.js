@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { getDurationInHours, getFormattedClassEvent } from 'util/time';
 
@@ -16,7 +18,7 @@ export const styles = {
       const minute = section.event.start.minute;
       const offset = Math.round(minute / 60 * 100);
       return `${offset}%`;
-    },
+    }, 
     left: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth * section.column}%`,
     height: ({ section }) => {
       const durationInHours = getDurationInHours(section.event);
@@ -92,15 +94,15 @@ class Section extends Component {
           aria-labelledby="simple-dialog-title"
           aria-describedby="simple-dialog-description"
         >
-        <DialogActions>
-        <Button onClick={this.toggleDialog}> Cancel </Button>
-        <Button onClick={this.toggleDialog}> Remove </Button>
-        </DialogActions>
           <Paper className={classes.dialog}>
             <Typography variant="h5">
               {`${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`}
             </Typography>
           </Paper>
+          <DialogActions>
+            <Button onClick={this.toggleDialog}> Remove </Button>
+            <Button onClick={this.toggleDialog}> Cancel </Button>
+          </DialogActions>
         </Dialog>
       </div>
     );
