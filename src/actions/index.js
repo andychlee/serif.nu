@@ -80,6 +80,10 @@ export const getSearchResultsSuccess = searchResults => ({
   searchResults,
 });
 
+export const getSearchResultsFailure = () => ({
+  type: actionTypes.GET_SEARCH_RESULTS_FAILURE,
+});
+
 export const updateSearchInput = searchInput => ({
   type: actionTypes.UPDATE_SEARCH_INPUT,
   searchInput,
