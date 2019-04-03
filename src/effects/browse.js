@@ -12,9 +12,10 @@ export function fetchSchools() {
     );
 }
 
-export function fetchSubjects(schoolId) {
+export function fetchSubjects(termId, schoolId) {
   return currentTermDoc
     .collection('subjects')
+    .where('termId', '==', termId)
     .where('schoolId', '==', schoolId)
     .get()
     .then(
