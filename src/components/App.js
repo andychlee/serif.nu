@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   getSchoolsRequest,
   fetchSearchIndex as fetchSearchIndexAction,
-  fetchSubjectsRequest
+  fetchSubjectsRequest,
 } from 'actions';
 import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
@@ -29,13 +29,11 @@ class App extends Component {
 
     auth.onAuthStateChanged((user) => {
       if (user) {
-        fetchSchools(CURRENT_TERM).then(result => console.log(result));
-        fetchSearchIndex(CURRENT_TERM).then(result => console.log(result));
-        fetchSubjects('WCAS').then(result => console.log(result)).catch(result => console.log('failure'));
+        fetchSchools(CURRENT_TERM);
+        fetchSearchIndex(CURRENT_TERM);
+        fetchSubjects('WCAS').then(result => console.log(result));
       }
     });
-    
-    
   }
 
   render() {

@@ -1,9 +1,9 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
-import { getSchoolsSuccess, getSchoolsFailure, fetchSubjectsRequest, fetchSubjectsSuccess, fetchSubjectsFailure } from 'actions';
+import { getSchoolsSuccess, getSchoolsFailure, fetchSubjectsSuccess, fetchSubjectsFailure } from 'actions';
 import * as actionTypes from '../actions/action-types';
 import { fetchSubjects, fetchSchools } from '../effects/browse';
-import CURRENT_TERM from '../util/constants.js'
+
 export const initialBrowseState = fromJS({
   isFetching: false,
   schools: [],
